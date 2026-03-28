@@ -33,6 +33,13 @@ html {
   scroll-padding-top: 88px;
 }
 
+@media (max-width: 768px) {
+  html {
+    /* Fixed nav is taller when brand + links wrap (2 rows) */
+    scroll-padding-top: 11rem;
+  }
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -246,6 +253,16 @@ body::before {
   .hero__content {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    /* Clear fixed header so H1 is not clipped under nav */
+    padding-top: max(11rem, calc(env(safe-area-inset-top, 0px) + 9.5rem));
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 72px;
   }
 }
 
