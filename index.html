@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Dzmitry Ananyeu - QA Automation Architect. Automation platforms, system-level testing, shorter regression cycles. Dubai, UAE.">
   <meta name="theme-color" content="#0b0f14">
   <title>Dzmitry Ananyeu - QA Automation Architect</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/nav.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,18 +16,28 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav" role="banner">
+  <header class="nav" id="site-header" role="banner">
     <div class="nav__inner">
       <a class="nav__brand" href="#" aria-label="Dzmitry Ananyeu - home">DA</a>
-      <nav class="nav__links" aria-label="Primary">
-        <a href="#skills">Skills</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#certificates">Certificates</a>
+      <button type="button" class="nav__menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+        <span class="nav__menu-icon" aria-hidden="true">
+          <span class="nav__menu-line"></span>
+          <span class="nav__menu-line"></span>
+          <span class="nav__menu-line"></span>
+        </span>
+      </button>
+      <nav id="nav-drawer" class="nav__drawer" aria-label="Primary">
+        <div class="nav__links">
+          <a href="#skills">Skills</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#certificates">Certificates</a>
+        </div>
       </nav>
     </div>
+    <div class="nav__backdrop" id="nav-backdrop" aria-hidden="true"></div>
   </header>
 
   <div class="shell">
@@ -165,6 +176,14 @@
               <span class="chip">OWASP Top 10</span>
             </div>
           </div>
+          <div class="skill-panel reveal">
+            <h3>AI-assisted QA &amp; Delivery</h3>
+            <div class="chips">
+              <span class="chip">Cursor</span>
+              <span class="chip">ChatGPT Enterprise</span>
+              <span class="chip">GitHub Copilot</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -274,9 +293,12 @@
         <p class="section__lead reveal">Responsibilities, platform work, and outcomes - complete detail.</p>
         <div class="exp-grid">
           <article class="exp-card reveal">
-            <div class="exp-card__meta">
-              <h3 class="exp-card__company">IDCentriq</h3>
-              <span class="exp-card__period">September 2025 - Present</span>
+            <div class="exp-card__meta exp-card__meta--logo">
+              <img class="exp-card__logo" src="assets/idcentriq.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <div class="exp-card__meta-inner">
+                <h3 class="exp-card__company">IDCentriq</h3>
+                <span class="exp-card__period">September 2025 - Present</span>
+              </div>
             </div>
             <p class="exp-card__location">Dubai, United Arab Emirates - On-site - Full-time</p>
             <p class="exp-card__role">QA Lead</p>
@@ -284,6 +306,7 @@
             <ul class="exp-detail">
               <li><strong>Quality strategy:</strong> End-to-end QA ownership across web, mobile, and hardware-touching services (enrollment, authentication, payments, device pairing) - aligned with multiple engineering teams across web, mobile, hardware, and platform, and with product leadership.</li>
               <li><strong>Automation foundation:</strong> Introduced a TypeScript-first stack (Playwright, WebdriverIO, Axios, k6): <strong>200+</strong> automated checks on critical API contracts and UI journeys; runs on <strong>every merge</strong> to main integration branches with artifacts and trend-friendly reporting.</li>
+              <li><strong>AI-assisted QA:</strong> Used <strong>Cursor</strong> and <strong>ChatGPT Enterprise</strong> in the loop for test ideas, documentation drafts, and defect/triage support - with explicit human review for accuracy, security, and privacy on identity and biometrics flows.</li>
               <li><strong>Performance:</strong> Rolled out k6 load and soak scenarios on core auth and enrollment APIs; defined <strong>P95 latency budgets</strong> and fail-fast gates in CI so regressions surface before release candidates.</li>
               <li><strong>Efficiency:</strong> Replaced ad-hoc manual passes with risk-ranked suites and parallel runners - cut average manual regression effort per release by <strong>~35%</strong> within the first delivery cycles.</li>
               <li><strong>Leadership:</strong> Lead QA chapter rituals (test design reviews, defect triage, release readiness); standardized test plans, risk registers, and exit criteria so squads share one language with dev and business stakeholders.</li>
@@ -295,13 +318,18 @@
               <span class="chip">WebdriverIO</span>
               <span class="chip">k6</span>
               <span class="chip">Axios</span>
+              <span class="chip">Cursor</span>
+              <span class="chip">ChatGPT Enterprise</span>
             </div>
           </article>
 
           <article class="exp-card reveal reveal-delay-1">
-            <div class="exp-card__meta">
-              <h3 class="exp-card__company">TAMM</h3>
-              <span class="exp-card__period">March 2025 - September 2025</span>
+            <div class="exp-card__meta exp-card__meta--logo">
+              <img class="exp-card__logo exp-card__logo--on-light" src="assets/tamm.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <div class="exp-card__meta-inner">
+                <h3 class="exp-card__company">TAMM</h3>
+                <span class="exp-card__period">March 2025 - September 2025</span>
+              </div>
             </div>
             <p class="exp-card__location">Abu Dhabi Government Services Platform, Abu Dhabi, UAE</p>
             <p class="exp-card__role">QA Lead / QA Automation Architect</p>
@@ -314,7 +342,7 @@
                   <li>Mobile native and webview automation (iOS/Android) using Appium.</li>
                 </ul>
               </li>
-              <li><strong>AI Integration:</strong> Embedded LLM-powered tools for auto-generating test cases, documentation, and defect analysis - cutting manual documentation effort by ~50%.</li>
+              <li><strong>AI Integration:</strong> Embedded <strong>GitHub Copilot</strong> and LLM-powered tools for auto-generating test cases, documentation, and defect analysis - cutting manual documentation effort by ~50%.</li>
               <li><strong>CI/CD &amp; Reporting Enhancements:</strong> Integrated automated test suites into GitLab CI/CD pipelines with real-time dashboards using Allure, HTML reports, and custom metrics portals to monitor:
                 <ul>
                   <li>Test execution and performance benchmarks (via JMeter).</li>
@@ -353,14 +381,18 @@
               <span class="chip">JMeter</span>
               <span class="chip">Allure</span>
               <span class="chip">Selenium</span>
+              <span class="chip">GitHub Copilot</span>
               <span class="chip">LLM / AI</span>
             </div>
           </article>
 
           <article class="exp-card reveal reveal-delay-2">
-            <div class="exp-card__meta">
-              <h3 class="exp-card__company">KMMRCE</h3>
-              <span class="exp-card__period">May 2022 - March 2025</span>
+            <div class="exp-card__meta exp-card__meta--logo">
+              <img class="exp-card__logo" src="assets/kmmrce.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <div class="exp-card__meta-inner">
+                <h3 class="exp-card__company">KMMRCE</h3>
+                <span class="exp-card__period">May 2022 - March 2025</span>
+              </div>
             </div>
             <p class="exp-card__location">Dubai, UAE</p>
             <p class="exp-card__role">QA HEAD / QA Automation Architect</p>
@@ -401,9 +433,12 @@
           </article>
 
           <article class="exp-card reveal reveal-delay-3">
-            <div class="exp-card__meta">
-              <h3 class="exp-card__company">Digital14 / NEXT50</h3>
-              <span class="exp-card__period">August 2018 - May 2022</span>
+            <div class="exp-card__meta exp-card__meta--logo">
+              <img class="exp-card__logo exp-card__logo--on-light" src="assets/next50.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <div class="exp-card__meta-inner">
+                <h3 class="exp-card__company">Digital14 / NEXT50</h3>
+                <span class="exp-card__period">August 2018 - May 2022</span>
+              </div>
             </div>
             <p class="exp-card__location">Abu Dhabi, UAE</p>
             <p class="exp-card__role">QA Lead / QA Automation Architect</p>
@@ -428,6 +463,39 @@
               <span class="chip">Selenium</span>
               <span class="chip">Selenoid</span>
               <span class="chip">BrowserStack</span>
+              <span class="chip">Sauce Labs</span>
+            </div>
+          </article>
+
+          <article class="exp-card reveal reveal-delay-4">
+            <div class="exp-card__meta exp-card__meta--logo">
+              <img class="exp-card__logo" src="assets/a1qa.png" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <div class="exp-card__meta-inner">
+                <h3 class="exp-card__company">a1qa</h3>
+                <span class="exp-card__period">2012 – January 2019 · 7 yrs 1 mo</span>
+              </div>
+            </div>
+            <p class="exp-card__location">Minsk, Belarus</p>
+            <p class="exp-card__role">QA Engineer → QA Lead → QA Project Manager</p>
+            <p class="exp-card__intro">a1qa is a pure-play QA and software testing company. Since 2003 it has supported Fortune 500 and mid-size clients worldwide with dedicated testing services. Outsourcing model: I contributed to <strong>20+ projects</strong> across different domains.</p>
+            <ul class="exp-detail">
+              <li><strong>QA Project Manager (2015 – Jan 2019):</strong> On the last major account, acted as <strong>QA Manager</strong> for a large team - <strong>6</strong> QA engineers and <strong>8</strong> QA automation engineers. Day-to-day: task distribution and QC, metrics for PMs, test strategy and QA plans, communication with PO, BA, and client-side developers, agile ceremonies (grooming, planning, dailies, retros), estimation for Python + Selenium automation, QA automation planning, and customer-facing discussions on code review and automation roadmaps. Later worked <strong>on the customer side in Abu Dhabi (UAE)</strong> as <strong>QA Team Lead</strong> - planning work for testers, quality control, and hands-on <strong>Python + Selenium</strong> automation.</li>
+              <li><strong>QA Lead (2014 – 2015):</strong> Led a team of <strong>5</strong> testers. Beyond execution: allocating work, metrics and QA plans, aligning test approach with the project manager, stakeholder communication, ceremonies, and cross-project QA process reviews. Delivery followed <strong>Scrum</strong> - sprint-level test planning, regular test reports, risk analysis, and regression prioritization.</li>
+              <li><strong>QA Engineer (2012 – 2014):</strong> Enterprise document processing, information retrieval, and e-commerce. Owned test documentation (including test specs and cases), functional / cross-browser / GUI testing, quality reporting, environments and logs, CMS and 1C integration. Deep <strong>SharePoint</strong> work - content changes, farm deployment, permissions - plus Agile delivery practices.</li>
+              <li><strong>Stack:</strong> Python; Selenium, requests, axe, Locust; Pytest; CI - GitLab, GitHub Actions, Jenkins; Allure and HTML reports; mobile runs (Android / iOS) via Appium; performance with JMeter, Locust, and Python requests alongside Selenium.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Selenium</span>
+              <span class="chip">Pytest</span>
+              <span class="chip">Appium</span>
+              <span class="chip">Jenkins</span>
+              <span class="chip">GitLab</span>
+              <span class="chip">GitHub Actions</span>
+              <span class="chip">Allure</span>
+              <span class="chip">JMeter</span>
+              <span class="chip">Locust</span>
+              <span class="chip">SharePoint</span>
               <span class="chip">Sauce Labs</span>
             </div>
           </article>
